@@ -2,9 +2,26 @@
 interface Props {
   name: string;
   age: number;
+  role: string;
+  description: string;
+  projectsLabel: string;
+  contactLabel: string;
+  ageLabel: string;
+  locationLabel: string;
+  availabilityLabel: string;
 }
 
-const { name, age } = Astro.props;
+const {
+  name,
+  age,
+  role,
+  description,
+  projectsLabel,
+  contactLabel,
+  ageLabel,
+  locationLabel,
+  availabilityLabel,
+} = Astro.props;
 ---
 
 <section class="hero">
@@ -19,28 +36,29 @@ const { name, age } = Astro.props;
 
   <div class="hero__bottom">
     <div>
-      <p class="hero__role">FRONTEND DEVELOPER</p>
+      <p class="hero__role">{role}</p>
+
       <p class="hero__description">
-        I build digital products with code, curiosity and attention to detail.
+        {description}
       </p>
     </div>
 
     <div class="hero__meta">
-      <p>{age} YEARS OLD</p>
-      <p>BASED IN CATALONIA</p>
-      <p>AVAILABLE FOR WORK</p>
+      <p>{age} {ageLabel}</p>
+      <p>{locationLabel}</p>
+      <p>{availabilityLabel}</p>
     </div>
   </div>
 
   <div class="hero__actions">
-    <a href="#projects">VIEW PROJECTS ↘</a>
-    <a href="#contact">CONTACT ↗</a>
+    <a href="#projects">{projectsLabel} ↘</a>
+    <a href="#contact">{contactLabel} ↗</a>
   </div>
 </section>
 
 <style>
   .hero {
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -50,7 +68,6 @@ const { name, age } = Astro.props;
   .hero__top {
     display: flex;
     justify-content: space-between;
-
     font-family: monospace;
     font-size: 0.8rem;
   }
@@ -70,7 +87,6 @@ const { name, age } = Astro.props;
   .hero__description {
     max-width: 650px;
     margin: 0;
-
     font-size: clamp(1.5rem, 3vw, 3rem);
     line-height: 1.05;
   }
@@ -88,7 +104,6 @@ const { name, age } = Astro.props;
     display: flex;
     gap: 2rem;
     margin-top: 4rem;
-
     font-family: monospace;
     font-size: 0.9rem;
   }

@@ -1,21 +1,22 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import { getAge } from "../utils/age";
-import ProjectCard from "../components/ProjectCard.astro";
-import { projects } from "../data/projects";
-import { ca } from "../i18n/ca";
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import { getAge } from "../../utils/age";
+import ProjectCard from "../../components/ProjectCard.astro";
+import LanguageSelector from "../../components/LanguageSelector.astro";
+import { projects } from "../../data/projects";
+import { es } from "../../i18n/es";
 
-return Astro.redirect("/ca");
 const age = getAge("2004-12-12");
-const t = ca;
+const t = es;
 ---
 
 <Layout
-  title="El meu portfolio"
+  title="Mi portfolio"
   description="Portfolio personal"
 >
   <main>
+    <LanguageSelector currentLang="es" />
     <Hero
       name="Marcel·lí Corominas Prats"
       age={age}
@@ -39,22 +40,3 @@ const t = ca;
     </section>
   </main>
 </Layout>
-
-<style>
-  .projects h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .projects__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  @media (max-width: 700px) {
-    .projects__grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>

@@ -1,0 +1,54 @@
+---
+interface Props {
+  currentLang: "ca" | "es" | "en";
+}
+
+const { currentLang } = Astro.props;
+---
+
+<nav class="language-selector" aria-label="Selector d'idioma">
+  <a href="/ca" class:list={{ active: currentLang === "ca" }}>
+    CA
+  </a>
+
+  <span>/</span>
+
+  <a href="/es" class:list={{ active: currentLang === "es" }}>
+    ES
+  </a>
+
+  <span>/</span>
+
+  <a href="/en" class:list={{ active: currentLang === "en" }}>
+    EN
+  </a>
+</nav>
+
+<style>
+  .language-selector {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+
+    padding: 1rem 0;
+
+    background: var(--bg);
+    }
+
+  .language-selector a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .language-selector .active {
+    color: var(--accent);
+  }
+
+  .language-selector a:hover {
+    opacity: 0.5;
+  }
+</style>

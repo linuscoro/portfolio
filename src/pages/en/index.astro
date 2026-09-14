@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import { getAge } from "../../utils/age";
+import ProjectCard from "../../components/ProjectCard.astro";
+import LanguageSelector from "../../components/LanguageSelector.astro";
+import { projects } from "../../data/projects";
+import { en } from "../../i18n/en";
+
+const age = getAge("2004-12-12");
+const t = en;
+---
+
+<Layout
+  title="My Portfolio"
+  description="Personal portfolio"
+>
+  <main>
+    <LanguageSelector currentLang="en" />
+    <Hero
+      name="Marcel·lí Corominas Prats"
+      age={age}
+      role={t.hero.role}
+      description={t.hero.description}
+      projectsLabel={t.hero.projectsLabel}
+      contactLabel={t.hero.contactLabel}
+      ageLabel={t.hero.ageLabel}
+      locationLabel={t.hero.locationLabel}
+      availabilityLabel={t.hero.availabilityLabel}
+    />
+
+    <section id="projects" class="projects">
+      <h2>Projectes</h2>
+
+      <div class="projects__grid">
+        {projects.map((project) => (
+          <ProjectCard project={project} />
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>

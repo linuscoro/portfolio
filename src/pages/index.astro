@@ -1,17 +1,48 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import { getAge } from "../utils/age";
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../data/projects";
+const age = getAge("2004-12-12");
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="El meu portfolio"
+  description="Portfolio personal"
+>
+  <main>
+    <Hero
+      name="Marcel·lí Corominas Prats"
+      age={age}
+    />
+     <section id="projects" class="projects">
+        <h2>Projectes</h2>
+
+        <div class="projects__grid">
+          {projects.map((project) => (
+            <ProjectCard project={project} />
+          ))}
+        </div>
+      </section>
+  </main>
+</Layout> 
+
+<style>
+  .projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .projects__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 700px) {
+    .projects__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

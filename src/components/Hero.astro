@@ -1,0 +1,112 @@
+---
+interface Props {
+  name: string;
+  age: number;
+}
+
+const { name, age } = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero__top">
+    <span>01 / INTRO</span>
+    <span>PORTFOLIO / 2026</span>
+  </div>
+
+  <h1 class="display-title">
+    {name}
+  </h1>
+
+  <div class="hero__bottom">
+    <div>
+      <p class="hero__role">FRONTEND DEVELOPER</p>
+      <p class="hero__description">
+        I build digital products with code, curiosity and attention to detail.
+      </p>
+    </div>
+
+    <div class="hero__meta">
+      <p>{age} YEARS OLD</p>
+      <p>BASED IN CATALONIA</p>
+      <p>AVAILABLE FOR WORK</p>
+    </div>
+  </div>
+
+  <div class="hero__actions">
+    <a href="#projects">VIEW PROJECTS ↘</a>
+    <a href="#contact">CONTACT ↗</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 2rem;
+  }
+
+  .hero__top {
+    display: flex;
+    justify-content: space-between;
+
+    font-family: monospace;
+    font-size: 0.8rem;
+  }
+
+  .hero__bottom {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-top: 4rem;
+  }
+
+  .hero__role {
+    margin: 0 0 1rem;
+    font-family: monospace;
+  }
+
+  .hero__description {
+    max-width: 650px;
+    margin: 0;
+
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .hero__meta {
+    font-family: monospace;
+    font-size: 0.85rem;
+  }
+
+  .hero__meta p {
+    margin: 0 0 0.4rem;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 2rem;
+    margin-top: 4rem;
+
+    font-family: monospace;
+    font-size: 0.9rem;
+  }
+
+  .hero__actions a {
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.2rem;
+  }
+
+  @media (max-width: 700px) {
+    .hero__bottom {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .hero__top {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+</style>

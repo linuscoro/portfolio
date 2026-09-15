@@ -1,0 +1,130 @@
+---
+interface Props {
+  currentLang: "ca" | "es" | "en";
+}
+
+const { currentLang } = Astro.props;
+
+const labels = {
+  ca: {
+    projects: "PROJECTES",
+    about: "SOBRE MI",
+    contact: "CONTACTE",
+  },
+  es: {
+    projects: "PROYECTOS",
+    about: "SOBRE MÍ",
+    contact: "CONTACTO",
+  },
+  en: {
+    projects: "PROJECTS",
+    about: "ABOUT",
+    contact: "CONTACT",
+  },
+};
+
+const t = labels[currentLang];
+---
+
+<header class="header">
+  <div class="header__inner">
+    <a class="header__brand" href={`/${currentLang}`}>
+      MC / PORTFOLIO
+    </a>
+
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="#projects">{t.projects}</a>
+      <a href="#about">{t.about}</a>
+      <a href="#contact">{t.contact}</a>
+    </nav>
+
+    <nav class="header__languages" aria-label="Language selector">
+      <a href="/ca" class:list={{ active: currentLang === "ca" }}>
+        CA
+      </a>
+
+      <span>/</span>
+
+      <a href="/es" class:list={{ active: currentLang === "es" }}>
+        ES
+      </a>
+
+      <span>/</span>
+
+      <a href="/en" class:list={{ active: currentLang === "en" }}>
+        EN
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    width: 100%;
+
+    background: var(--bg);
+  }
+
+  .header__inner {
+    width: min(var(--max-width), calc(100% - 3rem));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    min-height: 58px;
+  }
+
+  .header__brand,
+  .header__nav,
+  .header__languages {
+    font-family: monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .header__brand {
+    justify-self: start;
+  }
+
+  .header__nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .header__languages {
+    justify-self: end;
+
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .header a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .header a:hover {
+    color: var(--accent);
+  }
+
+  .header__languages .active {
+    color: var(--accent);
+  }
+
+  @media (max-width: 800px) {
+    .header__inner {
+      grid-template-columns: 1fr auto;
+    }
+
+    .header__nav {
+      display: none;
+    }
+  }
+</style>

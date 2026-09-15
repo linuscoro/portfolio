@@ -4,8 +4,6 @@ interface Props {
   age: number;
   role: string;
   description: string;
-  projectsLabel: string;
-  contactLabel: string;
   ageLabel: string;
   locationLabel: string;
   availabilityLabel: string;
@@ -16,8 +14,6 @@ const {
   age,
   role,
   description,
-  projectsLabel,
-  contactLabel,
   ageLabel,
   locationLabel,
   availabilityLabel,
@@ -50,10 +46,7 @@ const {
     </div>
   </div>
 
-  <div class="hero__actions">
-    <a href="#projects">{projectsLabel} ↘</a>
-    <a href="#contact">{contactLabel} ↗</a>
-  </div>
+
 </section>
 
 <style>
@@ -98,19 +91,6 @@ const {
 
   .hero__meta p {
     margin: 0 0 0.4rem;
-  }
-
-  .hero__actions {
-    display: flex;
-    gap: 2rem;
-    margin-top: 4rem;
-    font-family: monospace;
-    font-size: 0.9rem;
-  }
-
-  .hero__actions a {
-    border-bottom: 1px solid currentColor;
-    padding-bottom: 0.2rem;
   }
 
   @media (max-width: 700px) {

@@ -3,9 +3,9 @@ import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Hero.astro";
 import { getAge } from "../../utils/age";
 import ProjectCard from "../../components/ProjectCard.astro";
-import LanguageSelector from "../../components/LanguageSelector.astro";
 import { projects } from "../../data/projects";
 import { es } from "../../i18n/es";
+import Header from "../../components/Header.astro";
 
 const age = getAge("2004-12-12");
 const t = es;
@@ -15,15 +15,14 @@ const t = es;
   title="Mi portfolio"
   description="Portfolio personal"
 >
+  <Header currentLang="es" />
   <main>
-    <LanguageSelector currentLang="es" />
+    
     <Hero
       name="Marcel·lí Corominas Prats"
       age={age}
       role={t.hero.role}
       description={t.hero.description}
-      projectsLabel={t.hero.projectsLabel}
-      contactLabel={t.hero.contactLabel}
       ageLabel={t.hero.ageLabel}
       locationLabel={t.hero.locationLabel}
       availabilityLabel={t.hero.availabilityLabel}

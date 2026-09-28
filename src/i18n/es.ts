@@ -1,4 +1,24 @@
 export const es = {
+  about: {
+    photoAlts: {"portrait":"Retrato de Marcel·lí Corominas Prats","stories":["El Parlamento de Hungría en Budapest","Entrenamiento de piragüismo en el lago","Foto de grupo en el gimnasio de jiu-jitsu"]},
+    "label": "03 / SOBRE MÍ",
+    "title": "Curiosidad por la tecnología.\nConstancia para ir más allá.",
+    "intro": "Soy de Banyoles y soy graduado en Ingeniería Informática. Me apasiona entender cómo funcionan las cosas y este año empiezo el máster de Ciberseguridad en La Salle.",
+    "blocks": [
+      {
+        "title": "Aprender fuera de casa",
+        "text": "He vivido una temporada en Toronto y he hecho un Erasmus en Budapest. Conocer otros entornos forma parte de mi recorrido, y me gusta relacionarme con las personas y trabajar en equipo. Hablo catalán, castellano e inglés."
+      },
+      {
+        "title": "Once años en la embarcación",
+        "text": "Durante once años he practicado piragüismo y he competido a nivel nacional, con una cuarta posición en el Campeonato de España en una embarcación de equipo. Esta experiencia me ha enseñado a ser constante, a trabajar bajo presión y a sumar esfuerzos para alcanzar un objetivo compartido."
+      },
+      {
+        "title": "Nuevos retos, la misma constancia",
+        "text": "Llevo cerca de dos años practicando jiu-jitsu. El deporte sigue siendo una parte importante de mi vida: me gustan los retos y el proceso de mejorar con la práctica. Es esta misma actitud la que quiero aportar a los proyectos y a los equipos de los que forme parte."
+      }
+    ]
+  },
   hero: {
     role: "DESARROLLADOR",
     description:

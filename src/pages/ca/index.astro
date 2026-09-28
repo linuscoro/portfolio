@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Hero.astro";
+import About from "../../components/About.astro";
 import { getAge } from "../../utils/age";
 import ProjectCard from "../../components/ProjectCard.astro";
 import Header from "../../components/Header.astro";
@@ -37,5 +38,6 @@ const t = ca;
         ))}
       </div>
     </section>
+    <About content={t.about} />
   </main>
 </Layout>

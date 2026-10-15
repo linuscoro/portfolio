@@ -4,12 +4,13 @@ import Hero from "../../components/Hero.astro";
 import About from "../../components/About.astro";
 import { getAge } from "../../utils/age";
 import ProjectCard from "../../components/ProjectCard.astro";
-import { projects } from "../../data/projects";
+import { getProjects } from "../../data/projects";
 import { en } from "../../i18n/en";
 import Header from "../../components/Header.astro";
 
 const age = getAge("2004-12-12");
 const t = en;
+const projects = getProjects("en");
 ---
 
 <Layout
@@ -30,11 +31,11 @@ const t = en;
     />
 
     <section id="projects" class="projects">
-      <h2>Projectes</h2>
+      <h2>Projects</h2>
 
       <div class="projects__grid">
         {projects.map((project) => (
-          <ProjectCard project={project} />
+          <ProjectCard project={project} language="en" />
         ))}
       </div>
     </section>

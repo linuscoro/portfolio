@@ -7,15 +7,15 @@ export const ca = {
     "blocks": [
       {
         "title": "Aprendre fora de casa",
-        "text": "He viscut una temporada a Toronto i he fet un Erasmus a Budapest. Conèixer altres entorns forma part del meu recorregut, i m’agrada relacionar-me amb persones i treballar en equip. Parlo català, castellà i anglès."
+        "text": "He viscut una temporada a Toronto i he fet un Erasmus a Budapest. M'agrada conèixer altres entorns i relacionar-me amb persones. Crec que m'ajuda a ser més adaptable i a treballar de forma eficient en equips diversos."
       },
       {
-        "title": "Onze anys al vaixell",
+        "title": "Onze anys entrenant",
         "text": "Durant onze anys he practicat piragüisme i he competit a escala estatal, amb una quarta posició al Campionat d’Espanya en una embarcació d’equip. Aquesta experiència m’ha ensenyat a ser constant, a treballar sota pressió i a sumar esforços per assolir un objectiu compartit."
       },
       {
         "title": "Nous reptes, la mateixa constància",
-        "text": "Fa prop de dos anys que practico jiu-jitsu. L’esport continua sent una part important de la meva vida: m’agraden els reptes i el procés de millorar amb la pràctica. És aquesta mateixa actitud la que vull aportar als projectes i als equips dels quals formi part."
+        "text": "Fa prop de dos anys que practico jiu-jitsu. L’esport continua sent una part important de la meva vida: m’agraden els reptes i el procés de millorar amb la pràctica."
       }
     ]
   },

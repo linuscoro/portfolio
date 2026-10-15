@@ -5,11 +5,12 @@ import About from "../../components/About.astro";
 import { getAge } from "../../utils/age";
 import ProjectCard from "../../components/ProjectCard.astro";
 import Header from "../../components/Header.astro";
-import { projects } from "../../data/projects";
+import { getProjects } from "../../data/projects";
 import { ca } from "../../i18n/ca";
 
 const age = getAge("2004-12-12");
 const t = ca;
+const projects = getProjects("ca");
 ---
 
 <Layout
@@ -34,7 +35,7 @@ const t = ca;
 
       <div class="projects__grid">
         {projects.map((project) => (
-          <ProjectCard project={project} />
+          <ProjectCard project={project} language="ca" />
         ))}
       </div>
     </section>

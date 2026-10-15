@@ -7,15 +7,15 @@ export const en = {
     "blocks": [
       {
         "title": "Learning away from home",
-        "text": "I’ve spent time living in Toronto and completed an Erasmus exchange in Budapest. Experiencing different environments has been part of my journey, and I enjoy meeting people and working in a team. I speak Catalan, Spanish and English."
+        "text": "I've lived in Toronto for a season and done an Erasmus exchange in Budapest. I enjoy getting to know different environments and connecting with people. I think it helps me be more adaptable and work efficiently in diverse teams."
       },
       {
-        "title": "Eleven years on the water",
+        "title": "Eleven years training",
         "text": "I practised canoeing for eleven years and competed nationally, finishing fourth at the Spanish Championships in a crew boat. That experience taught me consistency, working under pressure and pulling together towards a shared goal."
       },
       {
         "title": "New challenges, the same commitment",
-        "text": "I’ve been practising jiu-jitsu for almost two years. Sport remains an important part of my life: I enjoy challenges and improving through practice. That’s the same attitude I want to bring to the projects and teams I join."
+        "text": "I’ve been practising jiu-jitsu for almost two years. Sport remains an important part of my life: I enjoy challenges and improving through practice."
       }
     ]
   },
